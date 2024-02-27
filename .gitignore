@@ -38,7 +38,7 @@ $RECYCLE.BIN/
 
 *.env
 
-build
+./build
 package-lock.json
 .server_name
 .idea/
