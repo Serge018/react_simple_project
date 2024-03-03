@@ -14,7 +14,10 @@ export function buildLoader(options: BuildOptions): webpack.RuleSetRule[] {
 			{
 				loader: 'css-loader',
 				options: {
-					modules: true
+					modules: {
+						auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+						localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:4]' : '[hash:base64:8]'
+					}
 				}
 			},
 			// Compiles Sass to CSS
