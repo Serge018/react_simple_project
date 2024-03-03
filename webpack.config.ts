@@ -12,11 +12,13 @@ const paths: BuildPaths = {
 
 const mode = 'development';
 const isDev= mode == 'development';
+const PORT = 3000;
 
 const config: webpack.Configuration = buildWebpackConfig({
 	mode: mode,
 	paths: paths,
-	isDev: isDev
+	isDev: isDev,
+	port: PORT
 });
 
 export default config;

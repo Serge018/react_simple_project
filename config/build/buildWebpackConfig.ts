@@ -5,6 +5,7 @@ import { BuildOptions } from './types/config';
 import { buildLoader } from './buildLoaders';
 import { buildResolves } from './buildResolves';
 import { buildPlugin } from './buildPlugins';
+import { buildDevServer } from './buildDevServer';
 
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
@@ -22,6 +23,8 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 			path: paths.build,
 			clean: true
 		},
-		plugins: buildPlugin(options)
+		plugins: buildPlugin(options),
+		devtool: 'inline-source-map',
+		devServer: buildDevServer(options)
 	}
 }
