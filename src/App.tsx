@@ -17,8 +17,8 @@ const App = () => {
 			<Link to={'/about'}>О сайте</Link>
 			<Suspense fallback={<div>Загрузка...</div>}>
 				<Routes>
-					<Route path={'/'} element={<AboutPageAsync />} />
-					<Route path={'/about'} element={<MainPageAsync />} />
+					<Route path={'/'} element={<MainPageAsync />} />
+					<Route path={'/about'} element={<AboutPageAsync />} />
 				</Routes>
 			</Suspense>
 		</div>

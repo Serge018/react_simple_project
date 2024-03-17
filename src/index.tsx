@@ -7,7 +7,7 @@ import ThemeProvider from "./theme/ThemeProvider";
 render(
 	<BrowserRouter>
 		<ThemeProvider>
-			<App />,
+			<App />
 		</ThemeProvider>
 	</BrowserRouter>,
 	document.getElementById('root')
