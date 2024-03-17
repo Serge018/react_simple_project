@@ -1,0 +1,11 @@
+:root {
+    --font-famaly-main: Consolas, Sans-serif;
+
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-famaly-main);
+
+    --font-size-l: 24px;
+    --font-line-l: 36px;
+    --font-l: var(--font-size-l) / var(--font-line-y) var(--font-famaly-main);
+}
