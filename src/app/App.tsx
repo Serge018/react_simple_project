@@ -5,7 +5,7 @@ import './styles/index.scss';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
-import { classNames } from 'helpers/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 const App = () => {
 
