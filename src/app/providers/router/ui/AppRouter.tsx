@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import {routesConfig} from "shared/config/routeConfig/routeConfig";
+import { routesConfig } from 'shared/config/routeConfig/routeConfig';
 
 const AppRouter = () => {
 	return (
