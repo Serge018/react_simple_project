@@ -5,6 +5,21 @@ import { BuildOptions } from './types/config';
 
 export function buildLoader(options: BuildOptions): webpack.RuleSetRule[] {
 
+	const svgLoader = {
+		test: /\.svg$/,
+		use: ['@svgr/webpack']
+	};
+ 
+	// Помимо картинок позволяет импортировать шрифты? для этого нужно в регулярное выражение добавить соответсвующие расширения
+	const fileLoader = {
+		test : /\.(png|jpe?g|gif)$/i,
+		use : [
+			{
+				loader: 'file-loader'
+			},
+		],
+	};
+
 	const cssLoader = {
 		test: /\.s[ac]ss$/i,
 		use: [
@@ -33,6 +48,8 @@ export function buildLoader(options: BuildOptions): webpack.RuleSetRule[] {
 	};
 
 	return [
+		svgLoader,
+		fileLoader,
 		typeScriptLoader,
 		cssLoader
 	]
