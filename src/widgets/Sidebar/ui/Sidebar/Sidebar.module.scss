@@ -16,6 +16,9 @@
     bottom: var(--padding-l);
     width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+}
+
+.lang {
+    margin-left: var(--padding-l);
 }
