@@ -39,6 +39,19 @@ export function buildLoader(options: BuildOptions): webpack.RuleSetRule[] {
 			'sass-loader',
 		]
 	};
+	
+	const babelLoader = {
+		test: /\.(?:js|jsx|tsx|ts)$/,
+		exclude: /node_modules/,
+		use: {
+			loader: 'babel-loader',
+			options: {
+				presets: [
+					['@babel/preset-env', { targets: 'defaults' }]
+				]
+			}
+		}
+	};
 
 	// Если не используем TS, то нужно подключать babel-loader для работы с tsx
 	const typeScriptLoader = {
@@ -50,6 +63,7 @@ export function buildLoader(options: BuildOptions): webpack.RuleSetRule[] {
 	return [
 		svgLoader,
 		fileLoader,
+		babelLoader,
 		typeScriptLoader,
 		cssLoader
 	]
