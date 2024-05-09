@@ -1,6 +1,7 @@
 import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
+import { buildCssLoaders } from './loaders/buildCssLoaders';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 
 export function buildLoader(options: BuildOptions): webpack.RuleSetRule[] {
@@ -20,38 +21,9 @@ export function buildLoader(options: BuildOptions): webpack.RuleSetRule[] {
 		],
 	};
 
-	const cssLoader = {
-		test: /\.s[ac]ss$/i,
-		use: [
-			// Creates `style` nodes from JS strings
-			options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-			// Translates CSS into C ommonJS
-			{
-				loader: 'css-loader',
-				options: {
-					modules: {
-						auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-						localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:4]' : '[hash:base64:8]'
-					}
-				}
-			},
-			// Compiles Sass to CSS
-			'sass-loader',
-		]
-	};
-	
-	const babelLoader = {
-		test: /\.(?:js|jsx|tsx|ts)$/,
-		exclude: /node_modules/,
-		use: {
-			loader: 'babel-loader',
-			options: {
-				presets: [
-					['@babel/preset-env', { targets: 'defaults' }]
-				]
-			}
-		}
-	};
+	const cssLoader = buildCssLoaders(options.isDev);
+
+	const babelLoader = buildBabelLoader();
 
 	// Если не используем TS, то нужно подключать babel-loader для работы с tsx
 	const typeScriptLoader = {

@@ -43,3 +43,4 @@ package-lock.json
 .server_name
 .idea/
 node_modules/
+*storybook.log
