@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import {Button, ThemeButton} from './Button';
-import {Theme} from "app/providers/ThemeProvider";
-import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Button, ThemeButton } from './Button';
+import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 const meta = {
 	title: 'shared/Button',
@@ -19,21 +19,21 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
 	args: {
 		children: 'Text'
-	},
+	}
 };
 
 export const Clear: Story = {
 	args: {
 		children: 'Text',
 		theme: ThemeButton.CLEAR
-	},
+	}
 };
 
 export const Outline: Story = {
 	args: {
 		children: 'Text',
 		theme: ThemeButton.OUTLINE
-	},
+	}
 };
 
 export const PrimaryDark: Story = {
@@ -42,7 +42,7 @@ export const PrimaryDark: Story = {
 	],
 	args: {
 		children: 'Text'
-	},
+	}
 };
 
 export const ClearDark: Story = {
@@ -52,7 +52,7 @@ export const ClearDark: Story = {
 	args: {
 		children: 'Text',
 		theme: ThemeButton.CLEAR
-	},
+	}
 };
 
 export const OutlineDark: Story = {
@@ -62,6 +62,5 @@ export const OutlineDark: Story = {
 	args: {
 		children: 'Text',
 		theme: ThemeButton.OUTLINE
-	},
+	}
 };
-
