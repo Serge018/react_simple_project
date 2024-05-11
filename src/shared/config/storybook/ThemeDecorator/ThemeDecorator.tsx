@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import { Theme } from 'app/providers/ThemeProvider';
 
 export const ThemeDecorator = (theme: Theme) => (Story: any) => {
