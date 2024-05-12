@@ -32,13 +32,12 @@ $RECYCLE.BIN/
 *.xls
 
 *.bmp
-*.png
 *.jpg
 *.jpeg
 
 *.env
 
-./build
+build/
 package-lock.json
 .server_name
 .idea/
