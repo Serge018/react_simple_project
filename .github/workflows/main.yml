@@ -27,6 +27,7 @@ jobs:
       - name: screenshot testing
         run: npm run test:ui:ci
       - name: Upload screenshots as artifacts
+        if: always()
         uses: actions/upload-artifact@v2
         with:
           name: screenshots
