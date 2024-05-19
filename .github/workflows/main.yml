@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 jobs:
   pipline:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 20.x ]
@@ -16,6 +16,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Install Consolas font
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ttf-mscorefonts-installer
+          sudo fc-cache -f -v
       - name: install modules
         run: npm install
       - name: build production project
