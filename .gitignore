@@ -38,6 +38,7 @@ $RECYCLE.BIN/
 *.env
 
 build/
+storybook-static/
 package-lock.json
 .server_name
 .idea/
